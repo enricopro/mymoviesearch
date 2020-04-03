@@ -1,2 +1,0 @@
-# mymoviesearch
-Created with CodeSandbox

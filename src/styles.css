@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body{
+  background-color: #223343;
+}
+.input{
+margin-top:50px;
+}
+.films{
+  margin-top: 20px;
+}
+.titles{
+  color: #fff;
+}
+.posters{
+  border-radius: 5px;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.divider{
+  margin-top: 90px;
+}
