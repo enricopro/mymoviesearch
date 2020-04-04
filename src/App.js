@@ -10,13 +10,14 @@ import {ThemeProvider} from '@material-ui/core/styles';
 import "./styles.css";
 import {TextField, Grid} from "@material-ui/core";
 import Footer from "./components/Footer"
-
+import { Helmet } from 'react-helmet'
 
 function App() {
   const [state, setState] = useState({
     s: "",
     results: [],
-    selected: {}
+    selected: {},
+    searching: false
   });
   const apiurl = "https://www.omdbapi.com/?apikey=7b037297";
 
@@ -65,10 +66,13 @@ function App() {
 
     axios(apiurl + "&i=tt" + randomId).then(response => {
       let result = response.data;
+      setState(prevState => {
+        return { ...prevState, searching: true };
+      });
       console.log(result);
       if (result.Response === "True" && result.Poster !== "N/A") {
         setState(prevState => {
-          return { ...prevState, selected: result };
+          return { ...prevState, selected: result, searching: false };
         });
       } else {
         openRandomPopup();
@@ -79,6 +83,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
+    <Helmet>
+    <title>MyMovieSearch</title>
+    <link rel="icon" type="image/png" href="./favicon.ico" sizes="16x16" />
+    </Helmet>
     <Header />
 
       <div className="input">
@@ -96,6 +104,12 @@ function App() {
         variant="outlined"
       />
       </div>
+      
+      {state.searching === true ? (
+         <Typography className="awesome" color="secondary" variant="h6">Wait a moment... let me search something cool for you!</Typography>
+      ) : (
+        <Typography color="secondary" variant="h6"></Typography>
+        )}
       
       {typeof state.selected.Title !== "undefined" ? (
          <Popup className="title" selected={state.selected} closePopup={closePopup} />

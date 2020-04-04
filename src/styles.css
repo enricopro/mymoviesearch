@@ -2,27 +2,79 @@
   font-family: sans-serif;
   text-align: center;
 }
-body{
+body {
   background-color: #223343;
 }
-.input{
-margin-top:50px;
+.input {
+  margin-top: 50px;
 }
-.films{
+.films {
   margin-top: 20px;
 }
-.titles{
+.titles {
   color: #fff;
 }
-.posters{
+.posters {
   border-radius: 5px;
 }
-.footer{
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
 }
-.divider{
+.divider {
   margin-top: 90px;
+}
+.awesome {
+  font-style: italic;
+
+  color: #313131;
+  font-weight: bold;
+  -webkit-animation: colorchange 5s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: blue;
+  }
+
+  10% {
+    color: #8e44ad;
+  }
+
+  20% {
+    color: #1abc9c;
+  }
+
+  30% {
+    color: #d35400;
+  }
+
+  40% {
+    color: blue;
+  }
+
+  50% {
+    color: #34495e;
+  }
+
+  60% {
+    color: blue;
+  }
+
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #f1c40f;
+  }
+
+  90% {
+    color: #2980b9;
+  }
+
+  100% {
+    color: pink;
+  }
 }
