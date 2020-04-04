@@ -12,7 +12,7 @@ export default function Fotter() {
     <BottomNavigation className="footer">
         <BottomNavigationAction href="instagram.com/enridalberton" icon={<InstagramIcon />} />
        <BottomNavigationAction href="https://talent.start2impact.it/profile/enrico-d-alberton" icon={<AccountCircleIcon />} />
-        <BottomNavigationAction href="dalberton.com" icon={<LanguageIcon />} />
+        <BottomNavigationAction href="https://www.dalberton.com" icon={<LanguageIcon />} />
     </BottomNavigation>
     
   );
